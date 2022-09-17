@@ -1,5 +1,8 @@
 local Setup = require 'setup/setup'
+
+--modules
 local GameModule = require './game/game'
+local MainMenuModule = require './main_menu/main_menu'
 
 local actModule = nil
 local font = require 'setup/fonts'
@@ -14,7 +17,7 @@ function love.load()
     font.init()
     GameModule.init()
     love.graphics.setFont(font['mono16'])
-    openModule(GameModule)
+    openModule(MainMenuModule)
 end
 
 function love.update(dt)
@@ -23,7 +26,7 @@ end
 
 function love.draw()
     Setup.scaleScreen()
-    love.graphics.clear(1,0,0);
+    love.graphics.clear(0,0,0);
     actModule.draw()
     Setup.Frame.draw()
 end

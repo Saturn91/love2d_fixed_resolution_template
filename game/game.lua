@@ -1,5 +1,4 @@
 local GameModule = {}
-local myText = ""
 
 local spritesheet = {}
 
@@ -8,8 +7,7 @@ function GameModule.init()
     spritesheet = love.graphics.newImage('resources/sprites/sprites.png')
 end
 
-function GameModule.open(text)
-    myText = text
+function GameModule.open()
 end
 
 function GameModule.update(dt)
