@@ -10,9 +10,10 @@ function openModule(module)
 end
 
 function love.load()
-    Setup.init()
+    Setup.init({x=240,y=160})
+    font.init()
     GameModule.init()
-    love.graphics.setFont(font['dialog'])
+    love.graphics.setFont(font['mono16'])
     openModule(GameModule)
 end
 
@@ -21,7 +22,8 @@ function love.update(dt)
 end
 
 function love.draw()
-    Setup.scaleScreen({x=240,y=160})
-    love.graphics.clear(0,0,0);
+    Setup.scaleScreen()
+    love.graphics.clear(1,0,0);
     actModule.draw()
+    Setup.Frame.draw()
 end
